@@ -6,17 +6,24 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXFileReference section */
-		6463DCFC2DA6E9DC0024AA71 /* Scramblet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scramblet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
+/* Begin PBXBuildFile section */
+		641FCD5E2DAD83B400F0E262 /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 641FCD5D2DAD83B400F0E262 /* dictionary.txt */; };
+		641FCD602DAD845100F0E262 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641FCD5F2DAD845100F0E262 /* Letter.swift */; };
+		6464D3A12DA819670032AE0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6464D39C2DA819670032AE0C /* ContentView.swift */; };
+		6464D3A22DA819670032AE0C /* GameDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6464D39E2DA819670032AE0C /* GameDictionary.swift */; };
+		6464D3A32DA819670032AE0C /* ScrambletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6464D39F2DA819670032AE0C /* ScrambletApp.swift */; };
+		6464D3A42DA819670032AE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6464D39B2DA819670032AE0C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		6463DCFE2DA6E9DC0024AA71 /* Scramblet */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Scramblet;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
+/* Begin PBXFileReference section */
+		641FCD5D2DAD83B400F0E262 /* dictionary.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
+		641FCD5F2DAD845100F0E262 /* Letter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		6463DCFC2DA6E9DC0024AA71 /* Scramblet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scramblet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6464D39B2DA819670032AE0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6464D39C2DA819670032AE0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6464D39E2DA819670032AE0C /* GameDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDictionary.swift; sourceTree = "<group>"; };
+		6464D39F2DA819670032AE0C /* ScrambletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrambletApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6463DCF92DA6E9DC0024AA71 /* Frameworks */ = {
@@ -32,7 +39,7 @@
 		6463DCF32DA6E9DC0024AA71 = {
 			isa = PBXGroup;
 			children = (
-				6463DCFE2DA6E9DC0024AA71 /* Scramblet */,
+				6464D3A02DA819670032AE0C /* Scramblet */,
 				6463DCFD2DA6E9DC0024AA71 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +50,19 @@
 				6463DCFC2DA6E9DC0024AA71 /* Scramblet.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6464D3A02DA819670032AE0C /* Scramblet */ = {
+			isa = PBXGroup;
+			children = (
+				6464D39F2DA819670032AE0C /* ScrambletApp.swift */,
+				6464D39C2DA819670032AE0C /* ContentView.swift */,
+				641FCD5F2DAD845100F0E262 /* Letter.swift */,
+				6464D39E2DA819670032AE0C /* GameDictionary.swift */,
+				6464D39B2DA819670032AE0C /* Assets.xcassets */,
+				641FCD5D2DAD83B400F0E262 /* dictionary.txt */,
+			);
+			path = Scramblet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +79,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				6463DCFE2DA6E9DC0024AA71 /* Scramblet */,
 			);
 			name = Scramblet;
 			packageProductDependencies = (
@@ -109,6 +126,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				641FCD5E2DAD83B400F0E262 /* dictionary.txt in Resources */,
+				6464D3A42DA819670032AE0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +138,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6464D3A12DA819670032AE0C /* ContentView.swift in Sources */,
+				6464D3A22DA819670032AE0C /* GameDictionary.swift in Sources */,
+				6464D3A32DA819670032AE0C /* ScrambletApp.swift in Sources */,
+				641FCD602DAD845100F0E262 /* Letter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
