@@ -26,7 +26,7 @@ struct ContentView: View {
 			),
 			spacing: 0
 		),
-		count: 5
+		count: 3
 	)
 	
 	// MARK: - View Body
@@ -41,7 +41,7 @@ struct ContentView: View {
 						: String(repeating: "•", count: word.count)
 					)
 					.font(.title3)
-					.frame(maxWidth: .infinity, alignment: .leading)
+					.frame(maxWidth: .infinity, alignment: .center)
 				}
 			}
 			
@@ -58,6 +58,12 @@ struct ContentView: View {
 					}
 					.buttonStyle(.plain)
 				}
+				
+				if currentWord.isEmpty {
+					Text("A")
+						.frame(width: 44, height: 44)
+						.hidden()
+				}
 			}
 			
 			HStack {
@@ -72,6 +78,9 @@ struct ContentView: View {
 					.disabled(currentWord.contains(letter))
 				}
 			}
+			
+			Button("Submit", action: submit)
+				.disabled(currentWord.count < 3)
         }
 		.padding()
 		.onAppear(perform: load)
@@ -93,6 +102,8 @@ struct ContentView: View {
 		
 		spellableWords = dictionary.spellableWords(from: targetWord)
 		
+		spellableWords = rotate(items: spellableWords, columns: 3)
+		
 		letters = targetWord.shuffled().map {
 			Letter(text: String($0))
 		}
@@ -111,6 +122,38 @@ struct ContentView: View {
 			}
 		}
 	}
+	
+	func submit() {
+		
+		// join the spelled word into a single string
+		let spelled = currentWord.map(\.text).joined()
+		
+		guard foundWords.contains(spelled) == false else { return}
+		
+		if spellableWords.contains(spelled) {
+			foundWords.insert(spelled)
+		}
+		
+		currentWord.removeAll()
+	}
+	
+	func rotate(items: [String], columns: Int) -> [String] {
+		
+		let rows = (items.count + columns - 1) / columns
+		var result = [String]()
+		
+		for row in 0..<rows {
+			for col in 0..<columns {
+				let index = col * rows + row
+				if index < items.count {
+					result.append(items[index])
+				}
+			}
+			
+		}
+		return result
+	}
+	
 }
 
 #Preview {
